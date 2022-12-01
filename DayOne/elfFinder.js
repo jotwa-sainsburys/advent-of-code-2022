@@ -5,10 +5,12 @@ function fileToArr() {
     .readFileSync("elfData.txt")
     .toString()
     .split("\n\n")
-    .map((x) => {
-      x = x.split("\n");
-      return x.map((x) => x * 1).reduce((x, y) => x + y);
-    });
+    .map((x) =>
+      x
+        .split("\n")
+        .map((x) => x * 1)
+        .reduce((x, y) => x + y)
+    );
   return arr;
 }
 
