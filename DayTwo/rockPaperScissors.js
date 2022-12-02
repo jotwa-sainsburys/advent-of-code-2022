@@ -10,36 +10,42 @@ function part1() {
   arr.forEach((x) => {
     switch (x[0]) {
       case "A":
-        if (x[2] === "X") {
-          score += 4;
-        }
-        if (x[2] === "Y") {
-          score += 8;
-        }
-        if (x[2] === "Z") {
-          score += 3;
+        switch (x[2]) {
+          case "X":
+            score += 4;
+            break;
+          case "Y":
+            score += 8;
+            break;
+          case "Z":
+            score += 3;
+            break;
         }
         break;
       case "B":
-        if (x[2] === "X") {
-          score += 1;
-        }
-        if (x[2] === "Y") {
-          score += 5;
-        }
-        if (x[2] === "Z") {
-          score += 9;
+        switch (x[2]) {
+          case "X":
+            score += 1;
+            break;
+          case "Y":
+            score += 5;
+            break;
+          case "Z":
+            score += 9;
+            break;
         }
         break;
       case "C":
-        if (x[2] === "X") {
-          score += 7;
-        }
-        if (x[2] === "Y") {
-          score += 2;
-        }
-        if (x[2] === "Z") {
-          score += 6;
+        switch (x[2]) {
+          case "X":
+            score += 7;
+            break;
+          case "Y":
+            score += 2;
+            break;
+          case "Z":
+            score += 6;
+            break;
         }
         break;
     }
@@ -53,36 +59,42 @@ function part2() {
   arr.forEach((x) => {
     switch (x[0]) {
       case "A":
-        if (x[2] === "X") {
-          score += 3;
-        }
-        if (x[2] === "Y") {
-          score += 4;
-        }
-        if (x[2] === "Z") {
-          score += 8;
+        switch (x[2]) {
+          case "X":
+            score += 3;
+            break;
+          case "Y":
+            score += 4;
+            break;
+          case "Z":
+            score += 8;
+            break;
         }
         break;
       case "B":
-        if (x[2] === "X") {
-          score += 1;
-        }
-        if (x[2] === "Y") {
-          score += 5;
-        }
-        if (x[2] === "Z") {
-          score += 9;
+        switch (x[2]) {
+          case "X":
+            score += 1;
+            break;
+          case "Y":
+            score += 5;
+            break;
+          case "Z":
+            score += 9;
+            break;
         }
         break;
       case "C":
-        if (x[2] === "X") {
-          score += 2;
-        }
-        if (x[2] === "Y") {
-          score += 6;
-        }
-        if (x[2] === "Z") {
-          score += 7;
+        switch (x[2]) {
+          case "X":
+            score += 2;
+            break;
+          case "Y":
+            score += 6;
+            break;
+          case "Z":
+            score += 7;
+            break;
         }
         break;
     }
