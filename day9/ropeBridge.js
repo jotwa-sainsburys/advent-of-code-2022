@@ -40,4 +40,47 @@ function part1(filename) {
   return positions.filter((x, y) => positions.indexOf(x) === y).length;
 }
 
+function part2(filename) {
+  const arr = fileToArr(filename);
+
+  let visited = [];
+
+  let h = { x: 0, y: 0 };
+  let t = Array(9)
+    .fill()
+    .map(() => ({ x: 0, y: 0 }));
+
+  for (x of arr) {
+    const { dir, moves } = x;
+    for (let step = 0; step < moves; step++) {
+      if (dir === "U") h.y--;
+      if (dir === "D") h.y++;
+      if (dir === "L") h.x--;
+      if (dir === "R") h.x++;
+
+      t.forEach((tail, index) => {
+        let prev = t[index - 1] || h;
+        let xchange = prev.x - tail.x;
+        let yChange = prev.y - tail.y;
+
+        if (Math.abs(xchange) > 1 && Math.abs(yChange) > 1) {
+          tail.x = tail.x + Math.sign(xchange);
+          tail.y = tail.y + Math.sign(yChange);
+        } else if (Math.abs(xchange) > 1) {
+          tail.x = tail.x + Math.sign(xchange);
+          tail.y = prev.y;
+        } else if (Math.abs(yChange) > 1) {
+          tail.x = prev.x;
+          tail.y = tail.y + Math.sign(yChange);
+        }
+      });
+
+      visited.push(`${t.at(-1).x},${t.at(-1).y}`);
+    }
+  }
+
+  return visited.filter((x, y) => visited.indexOf(x) === y).length;
+}
+
 console.log(part1("input"));
+console.log(part2("input"));
